@@ -55,30 +55,32 @@
             <h1 class="title is-1 publication-title">Breaking Synthetic Dependency: Towards Real-world Unsupervised Multi-modal Image Registration and Fusion</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bo Yang</a>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Zhaohui Jiang</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Dong Pan</a>,</span>
-                    <span class="author-block">
-                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Zhiping Lin</a>,</span>
-                  <span class="author-block">
-                    <a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Weihua Gui</a>
-                  </span>
-                  </div>
+	<span class="author-block">
+ 	 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bo Yang</a><sup>1</sup>,</span>
+	<span class="author-block">
+ 	 <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Zhaohui Jiang</a><sup>1,*</sup>,</span>
+	<span class="author-block">
+  	<a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Dong Pan</a><sup>1</sup>,</span>
+	<span class="author-block">
+  	<a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Zhiping Lin</a><sup>2</sup>,</span>
+	<span class="author-block">
+  	<a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Weihua Gui</a><sup>1</sup>
+	</span>
+	</div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">School of Automation, Central South University</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
-                  </div>
+	<div class="is-size-5 publication-authors">
+  	<span class="author-block"><sup>1</sup> School of Automation, Central South University</span><br>
+  	<span class="author-block"><sup>2</sup> Nanyang Technological University</span>
+  	<span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+	</div>
+
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                       
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/BOYang-pro/LDMReg" target="_blank"
+                    <a href="https://github.com/BOYang-pro/BSD-Fusion" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -108,7 +110,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Due to modality differences and inherent ambiguities (e.g., large deformations and image degradation, etc.), finding accurate correspondences is highly challenging in multimodal image registration  (MIR) tasks.     Limited by the encoder-decoder architecture, most existing methods primarily focus on directly learning correspondences without explicitly modeling feature priors, leading to poor performance in handling misalignments caused by modality differences and ambiguities.       To address these issues, we propose LDMReg, a diffusion model for MIR tasks.   Unlike traditional methods, LDMReg treats MIR as a conditional generation task, aligning and encoding multimodal features layer by layer, and using them as prior conditions to guide the diffusion process.            LDMReg consists of two main modules: a denoising network and a feature guidance module.   The former enhances denoising performance by replacing the UNet block with a nonlinear activation-free block.  The latter encodes features and facilitates cross-domain interactions, guiding the denoising network during reverse.   Additionally,  we apply the diffusion model in the latent space to reduce computational cost and adopt training strategies such as using multi-resolution noise instead of traditional noise.    Experimental results on four MIR tasks demonstrate that LDMReg outperforms existing methods in both quantitative and qualitative comparisons, and video application verifies its effectiveness.
+            Multimodal image fusion is highly sensitive to spatial misalignment, which often leads to visual artifacts and structural distortions. In real-world scenarios, obtaining multimodal image pairs with ground-truth correspondence is a challenge. Existing methods typically rely on synthetic data to mitigate the lack of ground truth. However, models trained on synthetic data often fail to generalize to real-world scenes with significant misalignment. To address this issue, this work proposes an unsupervised multimodal image alignment strategy—bidirectional cycle-consistency alignment—designed to learn spatial correspondences on unaligned real data. Specifically, the strategy constructs an image triplet and introduces a flow-consistency principle to establish forward and backward constraints, achieving feature-level alignment. Building upon this, a fusion framework is designed to consist of a feature registration network and a feature fusion network. The former learns cross-modal spatial correspondences via an unsupervised alignment strategy. At the same time, the latter integrates multimodal features using a hybrid CNN-Mamba module to suppress redundant information and produce high-quality fusion results. Extensive experiments demonstrate that the proposed method achieves superior qualitative and quantitative performance on both public datasets and industrial scenarios. Moreover, applications in object detection and video processing further validate the effectiveness of the proposed method in downstream tasks.
           </p>
         </div>
       </div>
